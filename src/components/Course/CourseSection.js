@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import CourseCategories from './CourseCategories';
-import CourseListWithCategory from './CourseListWithCategory';
+import CourseList from './CourseList';
 
 const CourseSection = ({courseData}) => {
   const [categoryId, setCategoryId] = useState(1);
@@ -15,24 +15,14 @@ const CourseSection = ({courseData}) => {
 
   return <div>
     <div style={{width:900, overflowX:'scroll', margin:'0 auto'}}>
-
-    <CourseCategories categories={courseData.categories} 
-    categoryId={categoryId}
-    onCategoryIdChange={onCategoryIdChange}
-    />
+      <CourseCategories categories={courseData.categories} 
+      categoryId={categoryId}
+      onCategoryIdChange={onCategoryIdChange}
+      />
     </div>
     <div style={{width:900, overflowX:'scroll', margin:'0 auto'}}>
-
-      {courseData.courses.map((coursesWithCategoryId, index) => {
-        return <CourseListWithCategory 
-        key={index}
-        courses={coursesWithCategoryId.courses}
-        categoryId={coursesWithCategoryId.category_id} 
-        currentCategoryId={categoryId}/>
-      })}
-
+      <CourseList courseData={courseData} categoryId={categoryId}/>
     </div>
-
   </div>
 }
 
