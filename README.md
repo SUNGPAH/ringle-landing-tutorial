@@ -1,7 +1,6 @@
 ### 외부 라이브러리
 
-axios
-classnames 
+axios, classnames 
 
 package.json에 define되어 있음. 
 
