@@ -1,8 +1,7 @@
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 import Category from './Category';
 
-const CourseTab = ({categories, onCategoryIdChange, categoryId}) => {
-
+const CourseCategories = ({categories, onCategoryIdChange, categoryId}) => {
   const onCategoryClick = (id) => {
     onCategoryIdChange(id);
   }
@@ -16,4 +15,4 @@ const CourseTab = ({categories, onCategoryIdChange, categoryId}) => {
   </div>
 }
 
-export default CourseTab
+export default CourseCategories

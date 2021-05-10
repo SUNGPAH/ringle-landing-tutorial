@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import axios from 'axios';
 import './App.css';
-import CourseList from './components/Course/CourseList';
+import CourseSection from './components/Course/CourseSection';
 
 const App = () => {
   const [courseData, setCourseData] = useState({});
@@ -22,7 +22,7 @@ const App = () => {
 
   return (
     <div className="App" style={{padding:40}}>
-      <CourseList courseData={courseData}/>
+      <CourseSection courseData={courseData}/>
     </div>
   );
 }

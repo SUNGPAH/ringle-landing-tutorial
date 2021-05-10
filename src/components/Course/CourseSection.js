@@ -1,8 +1,8 @@
-import React, {useEffect, useState} from 'react';
-import CourseTab from './CourseTab';
+import React, {useState} from 'react';
+import CourseCategories from './CourseCategories';
 import CourseListWithCategory from './CourseListWithCategory';
 
-const CourseList = ({courseData}) => {
+const CourseSection = ({courseData}) => {
   const [categoryId, setCategoryId] = useState(1);
 
   const onCategoryIdChange = (newCategoryId) => {
@@ -16,7 +16,7 @@ const CourseList = ({courseData}) => {
   return <div>
     <div style={{width:900, overflowX:'scroll', margin:'0 auto'}}>
 
-    <CourseTab categories={courseData.categories} 
+    <CourseCategories categories={courseData.categories} 
     categoryId={categoryId}
     onCategoryIdChange={onCategoryIdChange}
     />
@@ -36,4 +36,4 @@ const CourseList = ({courseData}) => {
   </div>
 }
 
-export default CourseList
+export default CourseSection
